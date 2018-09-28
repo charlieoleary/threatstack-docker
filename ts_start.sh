@@ -7,10 +7,7 @@
 
 set -e
 
-# configure the configuration location
-if [ -z ${THREATSTACK_CONFIG_PATH} ]; then
-  export THREATSTACK_CONFIG_PATH='/etc/ts-agent/ts_config.json'
-fi
+export THREATSTACK_CONFIG_PATH='/etc/ts-agent/ts_config.json'
 
 # set the deploy key
 if [ -z ${THREATSTACK_DEPLOY_KEY} ]; then
