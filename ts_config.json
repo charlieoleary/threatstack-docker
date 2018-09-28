@@ -1,0 +1,9 @@
+{
+  "deploy-key": "THREATSTACK_DEPLOY_KEY",
+  "agent_type": "i",
+  "ruleset": "THREATSTACK_RULESET",
+  "configuration": {
+    "enable_containers": 1,
+    "log_level": "THREATSTACK_LOGLEVEL"
+  }
+}
