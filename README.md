@@ -60,10 +60,9 @@ You will need to replace `DOCKER_IMAGE` with your image.
 
 ## Running the Container in ECS
 
-Unfortunately, ECS does not currently support the `--pid=host` Docker parameter, so the agent will
-not fully work in ECS. There is currently an [open issue](https://github.com/aws/amazon-ecs-agent/issues/473)
-that is requesting support for this. It appears to be a feature that will be added shortly. In the
-mean time, here is the basic task definition *without* the `--pid=host` support:
+In order to run this container on ECS, you must be using Amazon ECS Agent v1.22.0. Previous versions do
+not support the `--pid=host` Docker parameter, so the agent will not fully work in ECS. Below is a sample
+task definition that can be used to get you started:
 
 ```json
 {
@@ -75,6 +74,7 @@ mean time, here is the basic task definition *without* the `--pid=host` support:
       "name": "threatstack-agent",
       "image": "lever/threatstack:1.8.0c",
       "memoryReservation": "1024",
+      "pidMode": "host",
       "essential": true,
       "portMappings": [],
       "environment": null,
